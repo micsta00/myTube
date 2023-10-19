@@ -2,18 +2,13 @@ import { Menu, Upload, Bell, User, Mic, Search, ArrowLeft } from "lucide-react"
 import logo from "../assets/logo.png"
 import { Button } from "../components/Button"
 import { useState } from "react"
+import { useSidebarContext } from "../contexts/SidebarContext"
 
 export function PageHeader() {
     const [showFullWidthSearch, setShowFullWidthSearch] = useState(false)
+
     return (<div className="flex gap-10 lg:gap=20 justify-between pt-2 mb-6 mx-4">
-        <div className={`flex gap-4 items-center flex-shrink-0 ${showFullWidthSearch ? "hidden" : "flex"}`}>
-            <Button variant="ghost" size="icon">
-                <Menu />
-            </Button>
-            <a href="/">
-                <img src={logo} alt="" className="h-6" />
-            </a>
-        </div>
+        <PageHeaderFirstSection hidden={showFullWidthSearch} />
         <form className={`gap-4 flex-grow justify-center ${showFullWidthSearch ? "flex" : "hidden md:flex"}`}>
             {showFullWidthSearch && <Button onClick={() => setShowFullWidthSearch(false)} type="button" size="icon" variant="ghost" className="flex-shrink-0">
                 <ArrowLeft />
@@ -46,5 +41,21 @@ export function PageHeader() {
                 <User />
             </Button>
         </div>
+    </div>)
+}
+
+type PageHeaderFirstSectionProps = {
+    hidden?: boolean
+}
+
+export function PageHeaderFirstSection({ hidden = false }: PageHeaderFirstSectionProps) {
+    const { toggle } = useSidebarContext()
+    return (<div className={`flex gap-4 items-center flex-shrink-0 ${hidden ? "hidden" : "flex"}`}>
+        <Button onClick={toggle} variant="ghost" size="icon">
+            <Menu />
+        </Button>
+        <a href="/">
+            <img src={logo} alt="" className="h-6" />
+        </a>
     </div>)
 }

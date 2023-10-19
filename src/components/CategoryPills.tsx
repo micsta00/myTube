@@ -23,7 +23,6 @@ export function CategoryPills({ categories, selectedCategory, onSelect }: Catego
         const observer = new ResizeObserver(entries => {
             // const container = containerRef.current
             const container = entries[0]?.target
-            console.log(container.clientWidth, container.scrollWidth)
 
             if (container == null) return
 
