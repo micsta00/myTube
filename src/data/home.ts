@@ -2,8 +2,11 @@ export const categories = [
     "All",
     "JavaScript",
     "TypeScript",
+    "Css",
+    "Flexbox",
     "Programming",
-    "Weight Lifting",
+    "OS",
+    "Zig",
     "Bowling",
     "Hiking",
     "React",
@@ -14,12 +17,14 @@ export const categories = [
     "Backend Web Development",
     "Web Development",
     "Coding",
+
 ]
 
 export const videos = [
     {
         id: "1",
         title: "CSS Anchor Is The Best New CSS Feature Since Flexbox",
+        categories: ["Css", "Flexbox"],
         channel: {
             name: "Web Dev Simplified",
             id: "WebDevSimplified",
@@ -36,6 +41,7 @@ export const videos = [
     {
         id: "2",
         title: "NEW Way To Create Variables In JavaScript",
+        categories: ["JavaScript"],
         channel: {
             name: "Web Dev Simplified",
             id: "WebDevSimplified",
@@ -52,6 +58,7 @@ export const videos = [
     {
         id: "3",
         title: "Front-end developer takes on a CSS battle",
+        categories: ["Css"],
         channel: {
             name: "Kevin Powell",
             id: "KevinPowell",
@@ -68,6 +75,7 @@ export const videos = [
     {
         id: "4",
         title: "Quick guide to CSS focus states",
+        categories: ["Css"],
         channel: {
             name: "Kevin Powell",
             id: "KevinPowell",
@@ -84,6 +92,7 @@ export const videos = [
     {
         id: "5",
         title: "I Cannot Believe React Made A Hook For This",
+        categories: ["React"],
         channel: {
             name: "Web Dev Simplified",
             id: "WebDevSimplified",
@@ -100,6 +109,7 @@ export const videos = [
     {
         id: "6",
         title: "I Got Laid Off...",
+        categories: ["JavaScript"],
         channel: {
             name: "Caleb Curry",
             id: "CalebCurry",
@@ -116,6 +126,7 @@ export const videos = [
     {
         id: "7",
         title: "Tails OS in 100 Seconds",
+        categories: ["OS"],
         channel: {
             name: "Fireship",
             id: "Fireship",
@@ -132,6 +143,7 @@ export const videos = [
     {
         id: "8",
         title: "Zig in 100 Seconds",
+        categories: ["Zig"],
         channel: {
             name: "Fireship",
             id: "Fireship",
@@ -145,4 +157,22 @@ export const videos = [
         videoUrl:
             "https://storage.googleapis.com/gtv-videos-bucket/sample/ForBiggerJoyrides.mp4",
     },
+    {
+        id: "9",
+        title: "React Course - Beginner's Tutorial for React JavaScript Library [2022]",
+        categories: ["React", "JavaScript"],
+        channel: {
+            name: "freeCodeCamp.org",
+            id: "freeCodeCamp.org",
+            profileUrl:
+                "https://yt3.googleusercontent.com/ytc/APkrFKaqca-xQcJtp1Pqv-APucCa0nToHYGPVT00YBGOSw=s176-c-k-c0x00ffffff-no-rj",
+        },
+        views: 3257425,
+        postedAt: new Date("2022-01-10"),
+        duration: 42927,
+        thumbnailUrl: "https://i.ytimg.com/vi/bMknfKXIFA8/maxresdefault.jpg",
+        videoUrl:
+            "https://storage.googleapis.com/gtv-videos-bucket/sample/ForBiggerJoyrides.mp4",
+    },
 ]
+
