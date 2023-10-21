@@ -4,8 +4,9 @@ import { Button } from "../components/Button"
 import { useState } from "react"
 import { useSidebarContext } from "../contexts/SidebarContext"
 
-export function PageHeader() {
+export function PageHeader({ searchValue, setSearch }) {
     const [showFullWidthSearch, setShowFullWidthSearch] = useState(false)
+
 
     return (<div className="flex gap-10 lg:gap=20 justify-between pt-2 mb-6 mx-4">
         <PageHeaderFirstSection hidden={showFullWidthSearch} />
@@ -14,7 +15,7 @@ export function PageHeader() {
                 <ArrowLeft />
             </Button>}
             <div className="flex flex-grow max-w-[600px]">
-                <input type="search" placeholder="Search" className="rounded-l-full border border-secondary-border shadow-inner shadow-secondary py-1 px-4 text-lg w-full focus:border-blue-500 outline-none" />
+                <input type="search" value={searchValue} onChange={e => setSearch(e.target.value)} placeholder="Search" className="rounded-l-full border border-secondary-border shadow-inner shadow-secondary py-1 px-4 text-lg w-full focus:border-blue-500 outline-none" />
                 <Button className="py-2 px-4 rounded-r-full border-secondary-border border border-l-0 flex-shrink-0">
                     <Search />
                 </Button>
