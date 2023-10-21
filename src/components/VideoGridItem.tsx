@@ -27,8 +27,18 @@ export function VideoGridItem({ id, title, channel, views, postedAt, duration, t
         if (videoRef.current == null) return
 
         if (isVideoPlaying) {
+            let playPromise = videoRef.current.play()
             videoRef.current.currentTime = 0
-            videoRef.current.play()
+
+            if (playPromise !== undefined) {
+                playPromise.then(_ => {
+                    // console.log("then")
+                })
+                    .catch(error => {
+                        console.log(error)
+                    })
+            }
+            // videoRef.current?.play()
         } else {
             videoRef.current.pause()
         }

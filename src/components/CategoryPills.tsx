@@ -38,7 +38,7 @@ export function CategoryPills({ categories, selectedCategory, onSelect }: Catego
     }, [categories, translate])
 
     return (<div ref={containerRef} className="overflow-x-hidden relative">
-        <div className="flex whitespace-nowrap gap-3 transition-transform w-[max-content]" style={{ transform: `translateX(-${translate}px)` }}>
+        <div className="flex whitespace-nowrap gap-3 transition-transform duration-500 w-[max-content]" style={{ transform: `translateX(-${translate}px)` }}>
             {categories.map(category => {
                 return (
                     <Button key={category} onClick={() => onSelect(category)} variant={selectedCategory === category ? "dark" : "default"} className="py-1 px-3 rounded-lg whitespace-nowrap">{category}</Button>
