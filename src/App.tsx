@@ -26,7 +26,7 @@ export default function App() {
                 if (searchValue !== "") {
                   return vid.title.toLowerCase().includes(searchValue.toLowerCase())
                 }
-                return vid.categories.includes(selectedCategory)
+                return vid.categories.map(i => i.toLowerCase()).includes(selectedCategory.toLowerCase())
               }).map(video => {
                 return (
                   <VideoGridItem key={video.id} {...video} />
